@@ -10,5 +10,5 @@ public interface SelectStrategy {
      * @param element the element to be checked
      * @return true if the element satisfies the strategy, false otherwise
      */
-    boolean apply(final int element);
+    boolean apply(final Integer element);
 }
