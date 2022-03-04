@@ -12,7 +12,7 @@ public class SimpleBankAccountWithAtmTest extends AbstractBankAccountTest{
     @Override
     public void setUp(){
         setAccountHolder(new AccountHolder("Mario", "Rossi", 1));
-        setBankAccount(new SimpleBankAccount(getAccountHolder(), 0));
+        setBankAccount(new SimpleBankAccountWithAtm(getAccountHolder(), 0));
     }
 
     @Test
