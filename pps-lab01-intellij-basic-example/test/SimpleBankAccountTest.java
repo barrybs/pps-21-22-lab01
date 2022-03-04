@@ -13,15 +13,15 @@ class SimpleBankAccountTest extends AbstractBankAccountTest {
     @BeforeEach
     @Override
     public void setUp(){
-        accountHolder = new AccountHolder("Mario", "Rossi", 1);
-        bankAccount = new SimpleBankAccount(accountHolder, 0);
+        setAccountHolder(new AccountHolder("Mario", "Rossi", 1));
+        setBankAccount(new SimpleBankAccount(getAccountHolder(), 0));
     }
 
     @Test
     void testWithdraw() {
-        bankAccount.deposit(accountHolder.getId(), 100);
-        bankAccount.withdraw(accountHolder.getId(), 70);
-        assertEquals(30, bankAccount.getBalance());
+        getBankAccount().deposit(getAccountHolder().getId(), 100);
+        getBankAccount().withdraw(getAccountHolder().getId(), 70);
+        assertEquals(30, getBankAccount().getBalance());
     }
 
 }

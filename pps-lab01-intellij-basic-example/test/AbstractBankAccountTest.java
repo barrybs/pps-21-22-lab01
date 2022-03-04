@@ -8,8 +8,8 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public abstract class AbstractBankAccountTest {
-    protected BankAccount bankAccount;
-    protected AccountHolder accountHolder;
+    private BankAccount bankAccount;
+    private AccountHolder accountHolder;
 
     @BeforeEach
     public abstract void setUp();
@@ -61,4 +61,19 @@ public abstract class AbstractBankAccountTest {
         assertThrows(IllegalStateException.class, () -> this.bankAccount.withdraw(1,100));
     }
 
+    public BankAccount getBankAccount() {
+        return bankAccount;
+    }
+
+    public AccountHolder getAccountHolder() {
+        return accountHolder;
+    }
+
+    protected void setBankAccount(BankAccount bankAccount) {
+        this.bankAccount = bankAccount;
+    }
+
+    protected void setAccountHolder(AccountHolder accountHolder) {
+        this.accountHolder = accountHolder;
+    }
 }
